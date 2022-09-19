@@ -90,7 +90,8 @@ public class FileTreeImpl implements FileTree {
             else files.add(file);
         }
 
-
+        directories.sort((o1, o2) -> o1.getName().toLowerCase().compareTo(o2.getName().toLowerCase()));
+        files.sort((o1, o2) -> o1.getName().toLowerCase().compareTo(o2.getName().toLowerCase()));
         directories.addAll(files);
 
         return directories.toArray(new File[directories.size()]);
